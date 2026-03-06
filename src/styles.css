@@ -92,6 +92,100 @@ section > h2::after {
   color: #555;
 }
 
+/* Current Profile Section */
+.current-profile {
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.profile-card {
+  background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+  padding: 30px;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary-industrial);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.profile-icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.profile-card h3 {
+  color: var(--primary-industrial);
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+.profile-status {
+  color: #666;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.profile-skills {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-skills li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+}
+
+.profile-skills li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-soc);
+  font-weight: bold;
+}
+
+.cert-timeline {
+  margin-top: 15px;
+}
+
+.cert-item {
+  background: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--primary-soc);
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.95em;
+}
+
+.cert-date {
+  color: var(--primary-soc);
+  font-size: 0.85em;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
 /* Careers Comparison */
 .careers-comparison {
   display: flex;
@@ -309,6 +403,54 @@ section > h2::after {
   font-weight: bold;
 }
 
+.path-note {
+  text-align: center;
+  font-size: 1em;
+  color: var(--accent-industrial);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.step-status {
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.step-completed .step-status {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.step-in-progress .step-status {
+  background-color: #fff9c4;
+  color: #f57f17;
+}
+
+.step-completed {
+  border-color: #4caf50;
+  background: linear-gradient(135deg, #f1f8e9 0%, #fff 100%);
+}
+
+.step-in-progress {
+  border-color: var(--primary-soc);
+  background: linear-gradient(135deg, #ffebee 0%, #fff 100%);
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.1);
+}
+
+.step-in-progress .step-number {
+  background: linear-gradient(135deg, var(--primary-soc), #f57c00);
+  animation: pulse-step 2s infinite;
+}
+
+@keyframes pulse-step {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
 /* Certifications */
 .certifications {
   background: var(--bg-white);
@@ -347,6 +489,50 @@ section > h2::after {
 .cert-card p {
   font-size: 0.95em;
   opacity: 0.95;
+}
+
+.cert-date {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.cert-active {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cert-active::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translate( 0, 0); }
+  50% { transform: translate(20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+.cert-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
 }
 
 /* Resources */
