@@ -1,21 +1,449 @@
+:root {
+  --primary-industrial: #1a3a52;
+  --primary-soc: #d32f2f;
+  --accent-industrial: #2c5aa0;
+  --accent-soc: #f57c00;
+  --text-dark: #263238;
+  --text-light: #eceff1;
+  --bg-light: #f5f5f5;
+  --bg-white: #ffffff;
+  --border-color: #e0e0e0;
+}
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
-}
-
-main > h1 {
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary-industrial) 0%, #2c5aa0 50%, var(--primary-soc) 100%);
+  color: var(--text-light);
+  padding: 60px 20px;
   text-align: center;
-  font-size: 3.5em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header .subtitle {
+  font-size: 1.3em;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+section > h2 {
+  font-size: 2.2em;
+  color: var(--primary-industrial);
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+section > h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-industrial), var(--primary-soc));
+  border-radius: 2px;
+}
+
+/* Intro Section */
+.intro-section {
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+}
+
+.intro-section p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Careers Comparison */
+.careers-comparison {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.career-card {
+  flex: 1;
+  min-width: 280px;
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--primary-industrial);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-card.soc {
+  border-top-color: var(--primary-soc);
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.career-card h3 {
+  font-size: 1.8em;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.career-description {
+  color: #888;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #666;
+}
+
+.skills-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-industrial);
+  font-weight: bold;
+}
+
+.career-card.soc .skills-list li::before {
+  color: var(--primary-soc);
+}
+
+/* Transition Arrow */
+.transition-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  gap: 10px;
+}
+
+.arrow-svg {
+  width: 50px;
+  height: 50px;
+  color: var(--primary-industrial);
+  animation: pulse-arrow 2s infinite;
+}
+
+.transition-arrow span {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--primary-industrial);
+  text-align: center;
+}
+
+@keyframes pulse-arrow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Skills Bridge */
+.skills-bridge {
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.05em;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.skill-item {
+  padding: 25px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 100%);
+  border-left: 4px solid var(--primary-industrial);
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(5px);
+}
+
+.skill-item h4 {
+  color: var(--primary-industrial);
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.skill-item p {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* Learning Path */
+.learning-path {
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.path-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.path-step {
+  background: linear-gradient(135deg, #f5f7fa 0%, #fff 100%);
+  padding: 30px;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.path-step:hover {
+  border-color: var(--primary-industrial);
+  box-shadow: 0 4px 12px rgba(26, 58, 82, 0.15);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-industrial), #2c5aa0);
+  color: white;
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+.path-step h4 {
+  color: var(--primary-industrial);
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.path-step ul {
+  list-style: none;
+  padding: 0;
+}
+
+.path-step li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.path-step li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-industrial);
+  font-weight: bold;
+}
+
+/* Certifications */
+.certifications {
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.cert-card {
+  background: linear-gradient(135deg, var(--primary-soc) 0%, var(--accent-soc) 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
+}
+
+.cert-card h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.cert-card p {
+  font-size: 0.95em;
+  opacity: 0.95;
+}
+
+/* Resources */
+.resources {
+  background: linear-gradient(135deg, var(--primary-industrial) 0%, #2c5aa0 100%);
+  color: white;
+  padding: 50px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.resources-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resources-content p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.next-steps {
+  list-style: none;
+  padding: 0;
+}
+
+.next-steps li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.next-steps li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4dd0e1;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Footer */
+.footer {
+  background: var(--text-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2em;
+  }
+
+  .header .subtitle {
+    font-size: 1.1em;
+  }
+
+  .careers-comparison {
+    flex-direction: column;
+  }
+
+  .transition-arrow {
+    transform: rotate(90deg);
+    order: 3;
+    width: 100%;
+  }
+
+  .career-card {
+    order: 4;
+  }
+
+  .career-card:first-child {
+    order: 1;
+  }
+
+  section > h2 {
+    font-size: 1.8em;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  .skills-grid,
+  .cert-grid,
+  .path-container {
+    grid-template-columns: 1fr;
+  }
 }

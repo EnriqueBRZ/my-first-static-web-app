@@ -1,17 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <title>Transición: Ingeniero Industrial a Ingeniero SOC</title>
 </head>
 
 <body>
+  <header class="header">
+    <div class="header-content">
+      <h1>Ruta de Transición Profesional</h1>
+      <p class="subtitle">De Ingeniero Industrial a Ingeniero Security Operations Centre (SOC)</p>
+    </div>
+  </header>
+
   <main>
-    <h1>Vanilla JavaScript App</h1>
+    <!-- Sección de Introducción -->
+    <section class="intro-section">
+      <h2>Bienvenido a tu Camino Profesional</h2>
+      <p>Esta plataforma te guía a través del proceso de transición desde Ingeniería Industrial hacia el mundo de la Ciberseguridad como especialista en Security Operations Centre (SOC). Descubre cómo tus habilidades actuales son valiosas en este nuevo dominio.</p>
+    </section>
+
+    <!-- Sección de Comparación -->
+    <section class="careers-comparison">
+      <div class="career-card industrial">
+        <div class="card-icon">⚙️</div>
+        <h3>Ingeniero Industrial</h3>
+        <p class="career-description">Tu formación actual</p>
+        <ul class="skills-list">
+          <li>Optimización de procesos</li>
+          <li>Análisis de sistemas</li>
+          <li>Gestión de recursos</li>
+          <li>Eficiencia operacional</li>
+          <li>Resolución de problemas</li>
+          <li>Metodologías de mejora continua</li>
+        </ul>
+      </div>
+
+      <div class="transition-arrow">
+        <svg viewBox="0 0 100 100" class="arrow-svg">
+          <path d="M 20 50 L 80 50" stroke="currentColor" stroke-width="3" fill="none"/>
+          <polygon points="80,50 70,45 75,50 70,55" fill="currentColor"/>
+        </svg>
+        <span>TRANSICIÓN</span>
+      </div>
+
+      <div class="career-card soc">
+        <div class="card-icon">🛡️</div>
+        <h3>Ingeniero SOC</h3>
+        <p class="career-description">Tu nuevo dominio</p>
+        <ul class="skills-list">
+          <li>Monitoreo de seguridad</li>
+          <li>Análisis de amenazas</li>
+          <li>Respuesta a incidentes</li>
+          <li>Gestión de vulnerabilidades</li>
+          <li>Investigación forense</li>
+          <li>Compliance y regulaciones</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Sección de Habilidades Transferibles -->
+    <section class="skills-bridge">
+      <h2>Habilidades Transferibles</h2>
+      <p class="section-intro">Tu experiencia en Ingeniería Industrial te proporciona una base sólida para convertirte en un excelente Ingeniero SOC:</p>
+      
+      <div class="skills-grid">
+        <div class="skill-item">
+          <h4>Pensamiento Analítico</h4>
+          <p>Tu capacidad para analizar sistemas complejos es esencial para investigar incidentes de seguridad y patrones de amenazas.</p>
+        </div>
+        <div class="skill-item">
+          <h4>Optimización de Procesos</h4>
+          <p>Las mejoras que implementabas en procesos ahora se aplican a workflows de seguridad y automatización de respuestas a incidentes.</p>
+        </div>
+        <div class="skill-item">
+          <h4>Gestión de Recursos</h4>
+          <p>Tu experiencia asignando recursos optimizadamente te ayudará a priorizar alertas y gestionar equipo de SOC de manera eficiente.</p>
+        </div>
+        <div class="skill-item">
+          <h4>Resolución de Problemas</h4>
+          <p>El enfoque sistemático para resolver problemas es directamente aplicable a la investigación de brechas y eventos de seguridad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Ruta de Aprendizaje -->
+    <section class="learning-path">
+      <h2>Tu Ruta de Aprendizaje</h2>
+      
+      <div class="path-container">
+        <div class="path-step step-1">
+          <div class="step-number">1</div>
+          <h4>Fundamentos de Ciberseguridad</h4>
+          <ul>
+            <li>Principios de seguridad informática</li>
+            <li>Arquitectura de redes</li>
+            <li>Protocolos y comunicaciones</li>
+            <li>Criptografía básica</li>
+          </ul>
+        </div>
+
+        <div class="path-step step-2">
+          <div class="step-number">2</div>
+          <h4>Monitoreo y Detección</h4>
+          <ul>
+            <li>SIEM (Splunk, ELK Stack)</li>
+            <li>IDS/IPS systems</li>
+            <li>Log analysis</li>
+            <li>Threat intelligence</li>
+          </ul>
+        </div>
+
+        <div class="path-step step-3">
+          <div class="step-number">3</div>
+          <h4>Respuesta a Incidentes</h4>
+          <ul>
+            <li>Incident response procedures</li>
+            <li>Análisis forense</li>
+            <li>Containment and remediation</li>
+            <li>Post-incident reporting</li>
+          </ul>
+        </div>
+
+        <div class="path-step step-4">
+          <div class="step-number">4</div>
+          <h4>Especialización SOC</h4>
+          <ul>
+            <li>Operaciones de SOC avanzadas</li>
+            <li>Automatización de respuestas</li>
+            <li>Threat hunting</li>
+            <li>Certificaciones (CISSP, CEH)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Certificaciones -->
+    <section class="certifications">
+      <h2>Certificaciones Recomendadas</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <h4>CompTIA Security+</h4>
+          <p>Punto de partida ideal para entender fundamentos de ciberseguridad</p>
+        </div>
+        <div class="cert-card">
+          <h4>CEH (Certified Ethical Hacker)</h4>
+          <p>Esencial para entender técnicas de ataque y defensa</p>
+        </div>
+        <div class="cert-card">
+          <h4>CISSP</h4>
+          <p>Certificación avanzada para arquitectura y gestión de seguridad</p>
+        </div>
+        <div class="cert-card">
+          <h4>AZ-900 / AWS Security</h4>
+          <p>Para especialización en seguridad en la nube</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Recursos -->
+    <section class="resources">
+      <h2>Próximos Pasos</h2>
+      <div class="resources-content">
+        <p>Tu transición a Ingeniero SOC es un camino emocionante. Comienza hoy con:</p>
+        <ul class="next-steps">
+          <li>✓ Estudia los fundamentos de ciberseguridad</li>
+          <li>✓ Obtén tu primera certificación (Security+)</li>
+          <li>✓ Practica con laboratorios de seguridad</li>
+          <li>✓ Construye un portafolio de proyectos</li>
+          <li>✓ Busca un rol junior en SOC o análisis de seguridad</li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Tu Ruta Profesional | Ingeniero Industrial → Ingeniero SOC</p>
+  </footer>
 </body>
 
 </html>
